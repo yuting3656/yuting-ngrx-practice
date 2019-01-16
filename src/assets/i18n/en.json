@@ -1,0 +1,6 @@
+{
+    "myCounter.decrement": "Current Count",
+    "myCounter.reset.counter": "Reset Counter",
+    "myCounter.current.count": "Decrement",
+    "myCounter.current.increment": "Increment"
+}

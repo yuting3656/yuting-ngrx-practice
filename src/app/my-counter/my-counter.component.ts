@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select }  from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Decrement, Increment, Rest } from '../counter.actions';
 import { Observable } from 'rxjs';
+
+// translate
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-counter',
@@ -12,8 +15,16 @@ export class MyCounterComponent implements OnInit {
 
   count$: Observable<number>;
 
-  constructor(private store: Store<{count: number}>) { 
+  constructor(
+    private store: Store<{count: number}>,
+    private translate: TranslateService
+    ) {
     this.count$ = store.pipe(select('count'));
+
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('en');
+
+    translate.use('zh');
   }
 
   // + increment
@@ -26,13 +37,19 @@ export class MyCounterComponent implements OnInit {
     this.store.dispatch(new Decrement());
   }
 
-  // reset 
+  // reset
   reset() {
     this.store.dispatch(new Rest());
   }
 
 
   ngOnInit() {
+  }
+
+  //
+  onLanguageSelect(language) {
+    console.log(language);
+    this.translate.use(language);
   }
 
 }

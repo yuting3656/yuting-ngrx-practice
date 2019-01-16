@@ -1,0 +1,6 @@
+{
+    "myCounter.decrement": "減一",
+    "myCounter.reset.counter": "歸零",
+    "myCounter.current.count": "現在數值",
+    "myCounter.current.increment": "加一"
+}

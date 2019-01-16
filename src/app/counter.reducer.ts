@@ -12,7 +12,7 @@ export function counterReducer(state = initialState, action: Action) {
       case ActionTypes.Reset:
         return 0;
 
-      default: 
+      default:
         return state;
    }
 }

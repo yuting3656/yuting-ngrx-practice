@@ -1,7 +1,13 @@
-<button (click)="increment()">Increment</button>
+<button (click)="increment()">{{'myCounter.current.increment' | translate}}</button>
 
-<div>Current Count: {{(count$ | async)}}</div>
+<div>{{'myCounter.current.count' | translate}}: {{(count$ | async)}}</div>
 
-<button (click)="decrement()">Decrement</button>
+<button (click)="decrement()">{{'myCounter.decrement' | translate}}</button>
 
-<button (click)="reset()">Reset Counter</button>
+<button (click)="reset()">{{'myCounter.reset.counter' | translate}}</button>
+
+<!-- [ngModel]="language" -->
+<select (change)="onLanguageSelect($event.target.value)">
+    <option value="zh">中文</option>
+    <option value="en">English</option>
+</select>
