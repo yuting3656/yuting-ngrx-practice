@@ -13,6 +13,7 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 // ngx translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RxjsTaskComponent } from './rxjs-tasks/rxjs-task/rxjs-task.component';
 
 // AOT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,6 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     MyCounterComponent,
+    RxjsTaskComponent,
   ],
   imports: [
     BrowserModule,
