@@ -15,6 +15,11 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { RxjsTaskComponent } from './rxjs-tasks/rxjs-task/rxjs-task.component';
 
+// form Module
+import { FormsModule } from '@angular/forms';
+import { RxjsTaskInputComponent } from './rxjs-tasks/rxjs-task-input/rxjs-task-input.component';
+import { RxjsTaskApiComponent } from './rxjs-tasks/rxjs-task-api/rxjs-task-api.component';
+
 // AOT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,10 +30,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     MyCounterComponent,
     RxjsTaskComponent,
+    RxjsTaskInputComponent,
+    RxjsTaskApiComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({count: counterReducer}),
     //
     TranslateModule.forRoot({
