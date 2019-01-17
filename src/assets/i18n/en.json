@@ -2,5 +2,9 @@
     "myCounter.decrement": "Current Count",
     "myCounter.reset.counter": "Reset Counter",
     "myCounter.current.count": "Decrement",
-    "myCounter.current.increment": "Increment"
+    "myCounter.current.increment": "Increment",
+    "rxjsTask.ajax.button":"click me to uncover secret",
+    "rxjsTask.api.search":"search for photos",
+    "rxjsTask.api.clean":"clear",
+    "rxjsTask.input.search":"input for testing debounced~~"
 }

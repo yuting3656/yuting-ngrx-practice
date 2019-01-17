@@ -1,6 +1,6 @@
 <header>
-  <input type="text" [(ngModel)]="searchString" (ngModelChange)="inputChanged($event)" placeholder="Search">
-  <button (click)="searchString = ''">Clear</button>
+  <input type="text" [(ngModel)]="searchString" (ngModelChange)="inputChanged($event)" placeholder="{{ 'rxjsTask.api.search' | translate}}">
+  <button (click)="searchString = ''">{{ 'rxjsTask.api.clean' | translate}}</button>
 </header>
 
 

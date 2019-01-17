@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -7,7 +7,7 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './rxjs-task-input.component.html',
   styleUrls: ['./rxjs-task-input.component.css']
 })
-export class RxjsTaskInputComponent implements OnInit {
+export class RxjsTaskInputComponent implements OnInit, OnDestroy {
 
   searchSubject$ = new Subject<string>();
 
@@ -23,4 +23,9 @@ export class RxjsTaskInputComponent implements OnInit {
     console.log('input changed', $event);
     this.searchSubject$.next($event);
   }
+
+  ngOnDestroy(): void {
+    this.searchSubject$.unsubscribe();
+  }
+
 }
