@@ -22,9 +22,9 @@ export class MyCounterComponent implements OnInit {
     this.count$ = store.pipe(select('count'));
 
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
+    this.translate.setDefaultLang('en');
 
-    translate.use('zh');
+    this.translate.use('zh');
   }
 
   // + increment
