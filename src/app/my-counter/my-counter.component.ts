@@ -44,6 +44,9 @@ export class MyCounterComponent implements OnInit {
 
 
   ngOnInit() {
+    setInterval(() => {
+
+    }, 1000)
   }
 
   //

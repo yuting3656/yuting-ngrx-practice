@@ -10,7 +10,6 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'ngrx-projext';
   observable$;
 
-
   ngOnInit() {
     this.observable$ = Observable.create((observer) => {
       observer.next(1);
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     this.observable$.subscribe(
-      value => console.log(value),
+      this.test.bind(this),
       err => { },
       () => console.log('this is the end')
     );
@@ -32,6 +31,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.observable$.unsubscribe();
+  }
+
+  test(a) {
+    console.log('from this:', this);
+    console.log('from this value:', a);
   }
 
 }

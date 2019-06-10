@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { map, catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 import { fromEvent } from 'rxjs';
 
@@ -16,6 +16,9 @@ export class RxjsTaskComponent implements OnInit, OnDestroy {
   ifClickMe = true;
 
   obs$: Observable<any>;
+
+  reSubject$ = new ReplaySubject();
+
   constructor() {
   }
 
